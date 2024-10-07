@@ -30,7 +30,7 @@ const save = require('./save.js');
 //   }
 // })();
 
-get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&fields=items%2Fsnippet%2Fthumbnails%2Fdefault,items%2Fsnippet%2Ftitle&id=${data.channels.join(',')}&key=AIzaSyC-ie7G9H7mDCPwL-M6clyHjljFd6yBdl8`).then(async res => {
+get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&fields=items%2Fsnippet%2Fthumbnails%2Fdefault,items%2Fsnippet%2Ftitle&id=${data.channels.join(',')}&key={insertKEY}`).then(async res => {
   if (!res || res.status >= 400) return console.log('error', res.status);
   res = await res.json();
   res.items.forEach(c => {
